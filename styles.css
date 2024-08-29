@@ -1,0 +1,260 @@
+/* Base styling for body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container styling to mimic A4 dimensions */
+#container {
+    width: 210mm;
+    height: 297mm;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Header styling */
+#header {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+/* Background images positioned in corners with varying rotations */
+.background-image1 {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    opacity: 0.8; 
+    margin-left: -120px;
+    margin-top: -150px;
+}
+.background-image2 {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    opacity: 1; 
+    margin-left: -230px;
+    margin-bottom: -220px;
+
+}
+.background-image3 {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    opacity: 1; 
+    margin-right: -130px;
+    margin-bottom: -100px;
+}
+
+.corner-tl { top: 0; left: 0; transform: rotate(0deg); }
+.corner-tr { top: 0; right: 0; transform: rotate(90deg); }
+.corner-bl { bottom: 0; left: 0; transform: rotate(180deg); }
+.corner-br { bottom: 0; right: 0; transform: rotate(270deg); }
+
+#square-image {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 140px;
+    height: auto;
+    margin-left: -50px;
+    margin-top: -80px;
+    transform: rotate(45deg);
+    opacity: 0.7;
+}
+#square-image2 {
+    position: absolute;
+    bottom: 20px; /* Positions the element 20px from the bottom */
+    left: 20px;   /* Positions the element 20px from the left */
+    width: 140px;
+    height: auto;
+    transform: rotate(45deg);
+    opacity: 0.7;
+    margin-left: -130px;
+    margin-bottom: -50px;
+}
+
+
+#profile-info {
+    flex: 1;
+    padding-left: 90px;
+    margin-top: 20px;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+#profile-image-wrapper {
+    border: 30px solid #facbc3; /* Thickened border for a bold look */
+    border-radius: 50%;
+    padding: 10px;
+    position: relative;
+    transition: transform 0.3s ease; /* Smooth transition effect */
+}
+
+/* Profile image hover effect */
+#profile-image-wrapper:hover {
+    transform: scale(1.1); /* Zoom effect on hover */
+}
+
+#profile-image {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info {
+    margin: 10px 0;
+    font-size: 15px;
+    color: #555;
+}
+.contact-infoadd {
+    margin: 10px 0;
+    font-size: 15px;
+    color: #555;
+    margin-left: 45px;
+}
+
+
+#profile-info h1 {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+#profile-info h1:hover {
+    transform: scale(1.1);
+    color: #bde0fe; 
+}
+
+/* Content styling for columns */
+#content {
+    display: flex;
+    gap: 20px;
+    flex: 1;
+}
+
+.column {
+    flex: 1;
+    padding: 10px;
+}
+
+/* Section header styling */
+.section-header {
+    background-color: #facbc3;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.section-header h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #fff;
+}
+
+/* Section header hover effect */
+.section-header:hover {
+    background-color: #bde0fe; 
+    transform: scale(1.1);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.job, .degree, .about, .additional-info, .diplomas-training {
+    margin-bottom: 20px;
+}
+
+.job h3, .degree h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.job p, .degree p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #777;
+}
+
+.social-links {
+    margin-top: 10px;
+    font-size: 15px;
+    color: #555;
+    margin-left: 50px;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #f5007a; /* Change color on hover */
+}
+
+.social-icon {
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    margin-right: 5px;
+    transition: transform 0.2s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* List styling with added spacing */
+ul {
+    list-style: disc inside;
+    padding-left: 20px;
+    margin: 0 0 10px 0;
+    line-height: 1.8; /* Added spacing in the list */
+}
+
+.column ul {
+    columns: 1; /* Ensure lists are vertically aligned */
+}
+
+/* Responsive styling */
+@media print {
+    body {
+        background-color: white;
+    }
+    #container {
+        box-shadow: none;
+        margin: 0;
+        width: auto;
+        height: auto;
+        padding: 0;
+    }
+}
+
+@media (max-width: 1024px) {
+    #container {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        margin: 0;
+        flex-direction: column;
+    }
+
+    #content {
+        flex-direction: column;
+    }
+}
